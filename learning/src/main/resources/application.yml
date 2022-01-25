@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: learning
+  datasource:
+    url: jdbc:mysql://localhost:3306/learning?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password:
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:8080
+      #      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:8080
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    bootstrap-servers: localhost:8080
+server:
+  port: 8080
